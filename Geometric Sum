@@ -1,0 +1,45 @@
+Geometric Sum
+Send Feedback
+Given k, find the geometric sum i.e.
+1 + 1/2 + 1/4 + 1/8 + ... + 1/(2^k) 
+using recursion.
+Input format :
+Integer k
+Output format :
+Geometric sum
+Constraints :
+0 <= k <= 1000
+Sample Input 1 :
+3
+Sample Output 1 :
+1.875
+Sample Input 2 :
+4
+Sample Output 2 :
+1.93750
+ans is the variable in which we have stored the answer which will be returned by sum fucntion
+
+
+we need to truncate the decimal places of answer we get to 5
+
+
+so this format is used 
+
+
+format is the in built function in which we have passed our answer
+
+
+and wrote {0:.5f}
+
+
+this means till 5 decimal places
+
+
+
+def sum(n):
+    if n==0:
+        return 1
+    return 1/pow(2,n)+sum(n-1)
+n=int(input())
+ans = sum(n)
+print("{0:.5f}".format(ans))
